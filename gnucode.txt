@@ -1,0 +1,9 @@
+set terminal pdf
+set output "histogram.pdf"
+set title "Time elapsed for different scheduling policies"
+set style data histogram
+set style fill solid
+set style histogram clustered
+plot "aqi.data" using 2:xtic(1) title "SCHED RR",\
+"aqi.data" using 3 title "SCHED FIFO",\
+"aqi.data" using 4 title "SCHED OTHER"
